@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BlogControllerTest {
-
+ 
 	@GetMapping("/http/lombok")
 	public String lombokTest() {
 		Member m = new Member(1,"ssar","1234", "email");
