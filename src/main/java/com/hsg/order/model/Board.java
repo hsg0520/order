@@ -37,7 +37,7 @@ public class Board {
 	private String content;
 	
 	@ColumnDefault("0")
-	private int count; //조회수 
+	private int count; //조회수  
 	
 	@ManyToOne //board 가 many, user = one
 	@JoinColumn(name="userId")
