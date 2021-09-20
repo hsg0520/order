@@ -33,6 +33,6 @@ public class BlogControllerTest {
 	
 	@DeleteMapping("http/delete")
 	public String deleteTest() {
-		return "delete 요청222";
+		return "delete 요청222222";
 	}
 }
