@@ -21,13 +21,15 @@ import { Vue } from "vue-class-component";
 import service from "../utils/https";
 
 export default class LoginPage extends Vue {
- 
+   username = '';
+  password = '';
+  email ='';
   
   private login():void{
-    alert("test")
+    //alert("test")
     service.post('/api/login', {
-        username: "test",
-        password: "123"
+        username: this.username,
+        password: this.password
       })
       .then(res => {
         alert(res);

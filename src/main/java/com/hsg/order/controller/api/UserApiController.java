@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.*;
 import com.hsg.order.dto.ResponseDto;
 import com.hsg.order.model.User;
 import com.hsg.order.service.UserService;
@@ -18,6 +19,7 @@ public class UserApiController {
 	@Autowired
 	private UserService userService;
 	
+	
 	@PostMapping("/api/registrations")
 	public ResponseDto<Integer> save(@RequestBody User user) {
 		System.out.println("UserApiContoller: save 호출됨");
@@ -27,6 +29,28 @@ public class UserApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK,1);
 	}
 	
+	/*
+	@PostMapping("/api/registrations")
+	public JsonArray save(@RequestBody User user) {
+		System.out.println("UserApiContoller: save 호출됨");
+		
+		userService.register(user);
+		//JsonArray orderarray = new JsonArray();
+
+		//JsonObject orderList = new JsonObject();
+		//JsonElement jsonElement = new JsonElement();
+		
+		//orderList.addProperty("status", "성공");
+		//orderList.addProperty("id", user.getId());
+	
+		
+		orderarray.add(orderList);
+		
+		return orderarray;
+		
+		//return new ResponseDto<Integer>(HttpStatus.OK,1);
+	}
+	*/
 	
 	@PostMapping("/api/login")
 	public ResponseDto<Integer> login(@RequestBody User user, HttpSession session){

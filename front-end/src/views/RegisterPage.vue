@@ -50,8 +50,14 @@ export default class RegisterPage extends Vue {
       })
       .then(res => {
         console.log(res); 
+        if(1 == Number(res)){
+          alert("회원가입에 성공하였습니다.\n로그인페이지로 이동해주세용");
+        }
+        //console.log(JSON.stringify(res)); 
       })
-      .catch(error => console.log(error));
+      .catch(error => console.log(error)
+      
+      );
   };
  
 }

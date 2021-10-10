@@ -41,9 +41,12 @@ service.interceptors.response.use(
     // code == 0: success
     if (res.status === 200) {
         const data: ResponseData = res.data
-        if (data.code === 0) {
+        //console.log("JSONJSON: "+JSON.stringify(data.data));
+        //console.log("data.code: "+data.code);
+        //if (data.code === 0) {
+          
           return data.data;
-        } 
+        //} 
         // else {
         //   ElMessage({
         //     message: data.message,
